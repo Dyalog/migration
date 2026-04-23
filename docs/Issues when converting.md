@@ -1,4 +1,6 @@
-## Primitives and syntax
+## From APL+Win to Dyalog APL
+
+### Primitives and syntax
 
 - For `(a a)←1 2` APL+Win sets `a←1` but Dyalog sets `a←2`. This is hard to fix, but probably a rare occurrence.
 
@@ -8,20 +10,20 @@
 
 - Pass-though value of modified assignment is the expression on the left in APL+Win but the expression on the right in Dyalog.
 
-## System constants
+### System constants
 
 - `∆SYSVER` looks at the executable timestamp, but the interpreter does actually know when it was created, as shown in the About box
 
 - `⎕SINL` cannot be modelled, but is unlikely to appear in code; use `)SINL`.
 
-## System variables
+### System variables
 
 - `⎕RL` not fully modelled (missing two RNGs and `∆RL` is not updated when generating); only `⎕RL←` should be replaced with `∆RL←`.
 
 - `⎕PR` is impossible to model. R is a character singleton or empty vector. If R is empty, `⍞` input is returned with the prompt included in the result, including any changes user has made. If R is a character, that character replaces each unmodified element of the prompt in the result. `⎕PR` has no effect when `⎕ARBOUT ⍳0` is used.
 * `⎕WATCHPOINTS` would be very nice to have
 
-## System functions
+### System functions
 
 - Dyadic `⎕DR` is complex and does multiple advanced things, including data (de-)serialisation using binary or XML form.
 
@@ -41,7 +43,7 @@
 
 - `⎕CFINFO` and `⎕DTR` are not implemented
 
-## Keywords
+### Keywords
 
 - `:Assert expr` is a comment at runtime, but an assertion when running in debug mode
 
@@ -49,15 +51,15 @@
 
 - `:Trace`… is part of the larger logging system. It is skipped unless in test mode. It is equivalent to `:IfTest ⋄ ⎕LOG`…
 
-## Control structures
+### Control structures
 
-### Conditionals
+#### Conditionals
 
 - `:And` and `:Or` are short-circuiting `∧` and `∨` like `:AndIf` and `:OrIf` but for inline expressions, and `:Ex` allows intermediary execution (like statements between `:If` and `:AndIf`/`:OrIf`)
 
 - `:IfTest` is `:If TESTMODE`
 
-### Error Trapping
+#### Error Trapping
 
 - `:Try` is `:Trap 0`
 
@@ -67,7 +69,7 @@
 
 - `:Test` block is part of the larger logging system. It is skipped unless in debug mode. The `:Pass` block requires all statements to work without error, while the `:Fail` block requires all statements to error.
 
-### Select
+#### Select
 
 - `:NextCase` is the opposite of `break` in C-like languages, i.e. where C continues the the next case, APL jumps to `:EndSelect` at the end of a `:Case` block, but `:NextCase` allows continuation. The current substitution to `→2+⎕LC` fails if there are diamonds instead of line breaks.
 

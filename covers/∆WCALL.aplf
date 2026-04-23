@@ -1,0 +1,27 @@
+r←∆WCALL args;fn;flags;f
+:Select 1⊃,⊆args
+:Case 'W_Init'
+    r←'' '' (1↓∊' ',¨ 1↓2 ⎕NQ '.' 'GetCommandLineArgs')
+:Case 'MessageBox' ⍝ 0 question title ('MB_ICONQUESTION MB_YESNOCANCEL')
+    flags←' '(≠⊆⊢) 5⊃args
+    f←+/(MB_FLAGS[;2],0)[MB_FLAGS[;1]⍳flags]
+    'fn'⎕NA'I user32∣MessageBox* P <0T <0T I' ⍝ Associate local name with DLL function.
+    r←fn f@4⊢1↓args
+:Case 'ShellExecute'
+    f←(SW_FLAGS[;2],0)[SW_FLAGS[;1]⍳args[7]]
+    'fn'⎕NA'P shell32|ShellExecute* P <0T <0T P P I4'
+    r←fn f@6⊢1↓args
+:Case 'MessageBeep'
+    'fn'⎕NA'P user32|MessageBeep I'
+    r←fn 0
+:Case 'SendMessage'
+    f←WM_FLAGS[WM_FLAGS[;1]⍳args[3];2] ⍝ Crash with INDEX ERROR for as yet unsupported messages
+    :If 0=1↑0⍴5⊃args ⍝ Numeric
+       'fn'⎕NA'I user32|SendMessage* I I I I'
+    :Else
+       'fn'⎕NA'I user32|SendMessage* I I I <0T'
+    :EndIf
+    r←fn f@2⊢1↓args
+:Else
+   'This WCALL not currently supported' ⎕SIGNAL 11
+:EndSelect

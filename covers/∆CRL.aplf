@@ -1,0 +1,6 @@
+ ∆CRL←{
+     ⍺←1
+     Exec←(2147483647×~⍺)∘(⍬⍴⎕RSI).(86⌶)
+     (fnname lineno)←'^ *(\w+)' '\[(\d+)\] *$'⎕S'\1'⊢⍵
+     ⊃⍬⍴Exec lineno,'↓62⎕ATX''',fnname,''''
+ }

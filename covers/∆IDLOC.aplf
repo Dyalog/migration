@@ -1,0 +1,11 @@
+ state←∆IDLOC objlist;obj;⎕IO;ns
+⍝ Return a numeric matrix of class codes with one row for each object
+⍝ in objlist and one column for each stack level (most local on left).
+ objlist←'\S+'⎕S'&'↓objlist
+ ns←⍬⍴⎕RSI
+ state←⍴⍨0,≢⎕LC
+ :For obj :In objlist
+     state⍪←(1+ns.⎕NC obj),⊃⊢⍤\/¯1 0↓¨0 1+1 0 1 0/ns.⎕STATE obj
+ :EndFor
+ ⎕IO←0
+ state←¯1 0 8 2 1 4[5⌊state]

@@ -1,0 +1,7 @@
+R←X ∆NA Y
+:If 0=⎕NC 'X'
+:OrIf 0=≢X    ⍝ No or empty left argument
+    R←3.6=(1⊃⎕RSI).⎕NC ⊂Y
+:Else
+    'Dyadic ⎕NA not emulated' ⎕SIGNAL 11
+:EndIf

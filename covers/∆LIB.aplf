@@ -1,0 +1,14 @@
+ r←{ext}∆LIB y;⎕IO
+ :If 900⌶⍬ ⍝ monadic
+     ext←'*'
+ :EndIf
+ ⎕IO←1
+ :If 0∊⎕NC'⍙LIBS' ⋄ ⍙LIBS←0 2⍴0 ⋄ :EndIf
+ :If ⍬≡0⍴y
+     :If y∊⊣/⍙LIBS
+         y←(y⍳⍨⊣/⍙LIBS)⊃⊢/⍙LIBS
+     :Else
+         'LIBRARY NOT FOUND'⎕SIGNAL 22
+     :EndIf
+ :EndIf
+ r←⊃⍤0⊢∊¨1↓¨⎕NPARTS⊃⎕NINFO⍠1⊢y,(''≡y)↓'/*.',ext

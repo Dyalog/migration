@@ -1,0 +1,7 @@
+ TARGET ∆FDUP TN
+
+:If (∊1 ⎕NPARTS TARGET)≡∊1 ⎕NPARTS ⎕FNAMES[⎕FNUMS⍳TN;]
+   ⎕FRESIZE TN
+:Else
+   ⎕FUNTIE TARGET ⎕FCOPY TN
+:EndIf

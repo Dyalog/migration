@@ -1,0 +1,3 @@
+ r←∆SI
+ {2 ⎕NQ ⎕SE'KeyPress'⍵}¨(⊂'QT'),')SI',(⊂'ER')
+ ⎕SIGNAL⊂('EN' 16)('Message' '⎕SI not modelled — using )SI…')

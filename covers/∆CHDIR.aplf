@@ -1,0 +1,10 @@
+ {r}←∆CHDIR new;t;size;old;set;get
+⍝ Change Directory under DOS
+ t←'A*'[1+80=⎕DR'']
+ 'get'⎕NA'U Kernel32|GetCurrentDirectory',t,' U >0T'
+ 'set'⎕NA'U Kernel32|SetCurrentDirectory',t,' <0T'
+ (size old)←get 260 260   ⍝ get current directory
+ :If ×⍴,new               ⍝ if target directory then
+     ⎕SIGNAL(set⊂new)↓11  ⍝ change dir; Domain error if it fails
+ :End
+ r←⍙CURDIR←⎕IO⊃⎕CMD'cd' ⍝ NOTE: Why set ⍙CURDIR here?

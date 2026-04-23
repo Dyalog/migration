@@ -1,0 +1,23 @@
+ EXPR←GLOBALTRAP;⎕TRAP;en;interrupt
+ ⎕TRAP←(0 1000) 'S' ⍝ Avoid loops
+
+ :If interrupt←(en←⎕DMX.EN)≥1000
+    :If 2=⎕NC 'DEBUG_INTERRUPTS'
+       :AndIf 3=⎕NC DEBUG_INTERRUPTS
+           EXPR←⍎DEBUG_INTERRUPTS
+           →0
+    :EndIf
+ :EndIf
+
+ :If 0=#.⎕NC '∆QELX' ⋄ #.∆QELX←'⎕DM' ⋄ :EndIf
+ :If 0=#.⎕NC '∆QALX' ⋄ #.∆QALX←'⎕DM' ⋄ :EndIf
+ EXPR←(1+interrupt)⊃#.(∆QELX ∆QALX)
+
+ :If EXPR≢'⎕DM'
+     :If 2=⎕NC 'DISPLAY_ERRORS'
+     :AndIf 3=⎕NC DISPLAY_ERRORS
+         ⍎DISPLAY_ERRORS,' EXPR'
+     :EndIf
+ :Else
+     EXPR←'⎕←⍪⎕DM'
+ :EndIf

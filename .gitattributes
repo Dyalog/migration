@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.apl? linguist-language=APL
+APWtoDyalog.txt linguist-language=APL
+apw_replacements.txt linguist-language=regex

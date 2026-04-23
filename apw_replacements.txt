@@ -1,0 +1,140 @@
+∼%~
+⋆%*
+;⎕ALX\b%;#.∆QALX
+;⎕ELX\b%;#.∆QELX
+;⎕WSELF\b%;#.∆WSELF
+(?<![\w∆⍙]):catch (\s+)%:caselist(⎕EM⍳999)⍳⊆\1
+(?<![\w∆⍙]):catch%:else
+(?<![\w∆⍙]):catchall%:else
+(?<![\w∆⍙]):continueif([^⋄⍝]+)%:if\1⋄:continue⋄:endif
+(?<![\w∆⍙]):endtry%:endtrap
+(?<![\w∆⍙]):leaveif([^⋄⍝]+)%:if\1 ⋄ :leave ⋄ :endif
+(?<![\w∆⍙]):nextcase%→2+⎕LC
+(?<![\w∆⍙]):return\s*$%&
+(?<![\w∆⍙]):return\s*([^⍝]*)%→0⊣(⍎⊃'(^|⋄)\\s*([\\w∆⍙]+)\\s*←'⎕S'{⎕THIS.\\1←⍵}'⍠'UCP'1⊃⍬⍴⎕NR⊃⍬⍴⎕SI)
+(?<![\w∆⍙]):return\s*⎕novalue%→0⊣⎕EX'(^|⋄)\\s*([\\w∆⍙]+)\\s*←'⎕S'\\1'⍠'UCP'1⊃⍬⍴⎕NR⊃⍬⍴⎕SI
+(?<![\w∆⍙]):returnif%:goto 0/⍨
+(?<![\w∆⍙]):try%:trap 0
+(?<![\w∆⍙]):Verify%'ASSERTION FAILURE'⎕SIGNAL 8↓⍨1≡⍥,
+(?<!⎕)\b([A-Za-z∆⍙][\w∆⍙_]*)\s*¨\s*¨\s*%\1 #.Each #.Each 
+(?<!⎕)\b([A-Za-z∆⍙][\w∆⍙_]*)\s*¨\s*%\1 #.Each 
+(?<!\d)[∧^]/(?!\s*\[)% #.All 
+(?<!\d)∨/(?!\s*\[)% #.Any 
+((^|⋄|[\w∆⍙]\s*:)\s*)←%\1{}
+⎕AI\b%#.∆AI
+⎕AL\b%#.∆AL
+⎕ALX\b%∆QALX
+⎕ALX←\b%#.∆SetALX 
+⎕AV\b%#.∆AV
+⎕CALL\b%#.∆CALL
+⎕CF(\w+)\b%⎕F\1
+⎕CHDIR\b%#.∆CHDIR
+⎕CM\b%#.∆CM
+⎕CMD\b%#.∆CMD
+⎕CN(\w+)\b%⎕N\1
+⎕CN\b%#.∆CN
+⎕COPY\b%#.∆COPY
+⎕CR\b%#.∆CR
+⎕CRL\b%#.∆CRL
+⎕CRLF\b%#.∆CRLF
+⎕CRLPC\b%#.∆CRLPC
+⎕CV\b%#.∆CV
+⎕DEF\b%#.∆DEF
+⎕DEFL\b%#.∆DEFL
+⎕DM\b%#.∆DM
+⎕DR\b%#.∆DR
+⎕ELX\b%∆QELX
+⎕ENLIST\b%#.∆ENLIST
+⎕ERASE\b%#.∆ERASE
+⎕ERROR\b%#.∆ERROR
+⎕ESC\b%#.∆ESC
+⎕EX\b%#.∆EX
+⎕EXPAND[(\d+)]%(\1⍙_EXPAND)
+⎕EXPAND\b%#.∆EXPAND
+⎕FDUP\b%#.∆FDUP
+⎕FI\b%#.∆FI
+⎕FIRST\b%#.∆FIRST
+⎕FMT\b%#.∆FMT
+⎕FSTIE\b%#.∆FSTIE
+⎕FSIZE\b%#.∆FSIZE
+⎕FTIE\b%#.∆FTIE
+⎕GUID\b%#.∆GUID
+⎕HT\b%#.∆HT
+⎕IDLIST\b%#.∆IDLIST
+⎕IDLOC\b%#.∆IDLOC
+⎕INBUF\b%#.∆INBUF
+⎕INT\b%#.∆INT
+⎕IT\b%#.∆IT
+⎕LIB\b%#.∆LIB
+⎕LIBD\b%#.∆LIBD
+⎕LIBS\b%#.∆LIBS
+⎕LOCK\b%#.∆LOCK
+⎕LOG\b%#.∆LOG
+⎕MF\b%#.∆MF
+⎕MIX\b%#.∆MIX
+⎕MOM\b%#.∆MOM
+⎕MSELF\b%#.∆MSELF
+⎕NA\b%#.∆NA
+⎕NC\b%#.∆NC
+⎕NFE\b%#.∆NFE
+⎕NL\b%#.∆NL
+⎕NREAD\b%#.∆NREAD
+⎕OFF\b%#.∆OFF
+⎕PCOPY\b%#.∆PCOPY
+⎕PEEK\b%#.∆PEEK
+⎕PENCLOSE\b%#.∆PENCLOSE
+⎕POKE\b%#.∆POKE
+⎕PR\b%#.∆PR
+⎕PSAVE\b%#.∆PSAVE
+⎕QLOAD\b%#.∆QLOAD
+⎕REPL[(\d+)]%(\1⍙_REPL)
+⎕REPL\b%#.∆REPL
+⎕RL(\s*←)\b%#.∆RL\1
+⎕RMDIR\b%#.∆RMDIR
+⎕SA\b%#.∆SA
+⎕SAVE\b%#.∆SAVE
+⎕SEG\b%#.∆SEG
+⎕SI\b%#.∆SI
+⎕SINL\b%#.∆SINL
+⎕SPLIT\b%#.∆SPLIT
+⎕SS\b%#.∆SS
+⎕STPTR\b%#.∆STPTR
+⎕SYMB\b%#.∆SYMB
+⎕SYS\[22\]%#.∆SYS22 
+⎕SYS\b%#.∆SYS
+⎕SYSID\b%#.∆SYSID
+⎕SYSVER\b%#.∆SYSVER
+⎕TCBEL\b%(⎕UCS 7)
+⎕TCBS\b%(⎕UCS 13)
+⎕TCDEL\b%(⎕UCS 128)
+⎕TCESC\b%(⎕UCS 27)
+⎕TCFF\b%(⎕UCS 12)
+⎕TCHT\b%(⎕UCS 9)
+⎕TCLF\b%(⎕UCS 10)
+⎕TCNL\b%(⎕UCS 13)
+⎕TCNUL\b%(⎕UCS 0)
+⎕TF\b%#.∆TF
+⎕TT\b%#.∆TT
+⎕TYPE\b%#.∆TYPE
+⎕UCMD\b%#.∆UCMD
+⎕UCS\b%#.∆UCS
+⎕UL\b%#.∆UL
+⎕USERID\b%#.∆USERID
+⎕VGET\b%#.∆VGET
+⎕VI\b%#.∆VI
+⎕WATCHPOINTS\b%#.∆WATCHPOINTS
+⎕WCALL\b%#.∆WCALL
+⎕WGIVE\b%#.∆WGIVE
+⎕WI\b%#.∆WI
+⎕WARG\b%#.∆WARG
+⎕WRES\b%#.∆WRES
+⎕WSELF\b%#.∆WSELF
+⎕WSLIB\b%#.∆WSLIB
+⎕WSOWNER\b%#.∆WSOWNER
+⎕WSSIZE\b%#.∆WSSIZE
+⎕WSTS\b%#.∆WSTS
+⎕XFDUP\b%#.∆XFDUP
+⎕XF(\w+)\b%⎕F\1
+⎕XFTIE\b%⎕FTIE
+⎕XLIB\b%#.∆XLIB
+⎕XN(\w+)\b%⎕N\1

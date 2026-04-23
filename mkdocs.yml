@@ -1,0 +1,17 @@
+site_name: Migration
+repo_url: https://github.com/dyalog/migration
+repo_name: Dyalog/migration
+copyright: '<span style="color:var(--md-footer-fg-color--lighter)">Contents copyright &copy; 2026 </span><a href="https://dyalog.com" target="_blank">Dyalog Ltd</a>'
+
+theme:
+  favicon: img/favicon.ico
+  logo: 'img/dyalog-white.svg'
+  name: material
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.details
+  - admonition
+
+plugins:
+  - search

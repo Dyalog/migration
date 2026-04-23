@@ -4,7 +4,7 @@ repo_name: Dyalog/migration
 copyright: '<span style="color:var(--md-footer-fg-color--lighter)">Contents copyright &copy; 2026 </span><a href="https://dyalog.com" target="_blank">Dyalog Ltd</a>'
 
 theme:
-  favicon: img/favicon.ico
+  favicon: img/favicon-32.png
   logo: 'img/dyalog-white.svg'
   name: material
 

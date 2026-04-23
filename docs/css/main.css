@@ -39,23 +39,6 @@ table.scrollable {
 	--md-primary-fg-color--dark: #563336;
 	--md-default-bg-color: #F8F8F8;
 }
-/* Code copy only input (see CONTRIBUTING.md) */
-pre + pre > button, pre + hr {
-    display: none!important;
-}
-pre > code {
-    padding-bottom: 1em!important;
-}
-hr + pre > button {
-    top: -0.2em!important;
-}
-pre + pre , hr + pre {
-    margin-top: -1.8em!important;
-}
-pre + pre > code, hr + pre > code {
-    padding-top: 0.2em!important;
-}
-
 /* make admonition styling a la Dyalog */
 .md-typeset .admonition,
 .md-typeset details { 
@@ -72,24 +55,10 @@ pre + pre > code, hr + pre > code {
 	background-color: #F8F8F8 !important;
 }
 
-.md-typeset pre > code {
-	overflow: scroll !important;
-	scrollbar-color: black;
-	scrollbar-width: thin;
-}
-
 .md-copyright {
 	width: 100%;
 }
 
-.md-typeset dd {
-	margin-top: 0em;
-}
-
-.left {
-	float: left;
-}
-
-.right {
+.md-copyright__highlight{
 	float: right;
 }

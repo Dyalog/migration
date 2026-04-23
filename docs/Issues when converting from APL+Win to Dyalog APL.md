@@ -1,8 +1,4 @@
-# Issues when converting from APL+Win to Dyalog APL
-
 ## Primitives and syntax
-
-- ✅ Monadic `←` is sink, but we cannot just blanket replace `←` with `⍙LeftArrow` — it has to be replaced only if nothing is between `←` and a `⋄` on the left or the beginning of the line.
 
 - For `(a a)←1 2` APL+Win sets `a←1` but Dyalog sets `a←2`. This is hard to fix, but probably a rare occurrence.
 
@@ -10,13 +6,13 @@
 
 - `"`-delimited character constants can be automatically transformed to use `'` quotes but `⍎` will fail on a `'`-delimited expression that contains `"`-delimited text.
 
+- Pass-though value of modified assignment is the expression on the left in APL+Win but the expression on the right in Dyalog.
+
 ## System constants
 
 - `∆SYSVER` looks at the executable timestamp, but the interpreter does actually know when it was created, as shown in the About box
 
 - `⎕SINL` cannot be modelled, but is unlikely to appear in code; use `)SINL`.
-
-- ✅ `⎕NOVALUE` is only used from `:Return` and `:Res` both of which are not in Dyalog. It is simply `⎕EX` on the return variable names.
 
 ## System variables
 
@@ -29,7 +25,7 @@
 
 - Dyadic `⎕DR` is complex and does multiple advanced things, including data (de-)serialisation using binary or XML form.
 
-- `⎕CALL` and ``⎕STPTR` cannot be modelled, but is usually easy to rewrite to pure APL.
+- `⎕CALL` and `⎕STPTR` cannot be modelled, but is usually easy to rewrite to pure APL.
 
 - Skipping `⎕DEFL` for now as not worth the effort, though totally doable.
 
@@ -43,13 +39,11 @@
 
 - `⎕LOG` is part of the larger logging system. It writes timestamped and optionally (left arg) event-typed entries a log file.
 
-- `⎕CFINFO` is not implemented
+- `⎕CFINFO` and `⎕DTR` are not implemented
 
 ## Keywords
 
 - `:Assert expr` is a comment at runtime, but an assertion when running in debug mode
-
-- ✅ `:Verify expr` is like `:Assert` but always executes, even when in production mode
 
 - `:Debug expr` is a comment at runtime, but an `:if DEBUGMODE ⋄ {}…` if in debug mode
 
@@ -62,8 +56,6 @@
 - `:And` and `:Or` are short-circuiting `∧` and `∨` like `:AndIf` and `:OrIf` but for inline expressions, and `:Ex` allows intermediary execution (like statements between `:If` and `:AndIf`/`:OrIf`)
 
 - `:IfTest` is `:If TESTMODE`
-
-- ✅`:ContinueIf`, `:LeaveIf`, `:ReturnIf` are short forms of `:If`…`:Continue` etc.
 
 ### Error Trapping
 

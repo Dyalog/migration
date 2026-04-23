@@ -8,6 +8,9 @@ theme:
   logo: 'img/dyalog-white.svg'
   name: material
 
+extra_css:
+  - css/main.css
+
 markdown_extensions:
   - attr_list
   - pymdownx.details

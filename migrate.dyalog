@@ -29,7 +29,7 @@
               r,←⊂'-rep=     file containing replacements to me made in source code (default: ',optsDefs.rep FmtPath⍛,')'
               r,←⊂'          Each line consists of "regex%transformation" using ⎕R conventions'
               r,←⊂''
-              r,←⊂'Example:'
+              r,←⊂'Examples:'
               r,←⊂'    Import and convert, but leave code in # for saving with )SAVE or manual export (covers begin with "_" because it cannot begin names in APL+Win):'
               r,←⊂'        ]',cmd,' C:\apw\eigenval'
               r,←⊂'    Full conversion, but leave code in # for saving with )SAVE or manual export (covers in namespace "_" because it is an invalid name in APL+Win):'
@@ -62,7 +62,7 @@
 
     ∇ r←Run(cmd opts)
       originCache←⊃⎕NPARTS ##.SourceFile
-      r←(opts.⎕NS'pre' 'rep'/⍨~opts.(pre rep)∊0)APLPlusWin⊃opts.Arguments
+      r←opts APLPlusWin⊃opts.Arguments
       r←¯1↓∊r,¨⎕UCS 13
     ∇
 
@@ -70,6 +70,7 @@
       ;rep;from;to;pre;vars;fns;ops;val;name;file;content;debug;reps;target;covers;ms
       ms←11 ⎕DT'Z'
       'opts'⎕NS ⍬
+      opts.(⎕EX⊃∊∘0⍛⌿⍨/⎕VGET 2)
       opts{⎕THIS(⍵ ⎕NS ⍺).⎕NS ⍵.⎕NL ¯2}optsDefs
      
       log←0⍴⊂''

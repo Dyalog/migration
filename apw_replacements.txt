@@ -1,7 +1,7 @@
 ∼%~
 ⋆%*
-;⎕ALX\b%;#.∆QALX
-;⎕ELX\b%;#.∆QELX
+;⎕ALX\b%;∆QALX
+;⎕ELX\b%;∆QELX
 ;⎕WSELF\b%;#.∆WSELF
 (?<![\w∆⍙]):catch (\s+)%:caselist(⎕EM⍳999)⍳⊆\1
 (?<![\w∆⍙]):catch%:else

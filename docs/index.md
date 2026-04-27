@@ -34,6 +34,6 @@ Requires Dyalog v20.0 or newer.
 1. `]set cmddir ,path\to\migration`
 2. `]MIGRATE.APLPlusWin path\for\raw\source` or `]MIGRATE.APLPlusWin path\for\raw\source -out=path\for\converted\source`
 
-This keeps a flat workspace where covers for APL+Win built-ins are prefixed with `_` since that character cannot begin a name in APL+Win. Add `-pre=_.` to instead put the covers into a namespace `_`.
+This puts covers for APL+Win built-ins into a namespace `_` since that character cannot begin a name in APL+Win. Add `-pre=_.` to instead keep the workspace flat by prefixing all cover names with the `_` character.
 
 See `MIGRATE.APLPlusWin -??` for details.

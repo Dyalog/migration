@@ -30,10 +30,10 @@
               r,←⊂'          Each line consists of "regex%transformation" using ⎕R conventions'
               r,←⊂''
               r,←⊂'Examples:'
-              r,←⊂'    Import and convert, but leave code in # for saving with )SAVE or manual export (covers begin with "_" because it cannot begin names in APL+Win):'
+              r,←⊂'    Import and convert, but leave code in # for saving with )SAVE or manual export (covers in namespace "_" because it is an invalid name in APL+Win):'
               r,←⊂'        ]',cmd,' C:\apw\eigenval'
-              r,←⊂'    Full conversion, but leave code in # for saving with )SAVE or manual export (covers in namespace "_" because it is an invalid name in APL+Win):'
-              r,←⊂'        ]',cmd,' C:\apw\eigenval -out=C:\dyalog\eigenval -pre=_.'
+              r,←⊂'    Full conversion, but leave code in # for saving with )SAVE or manual export (covers begin with "_" because it cannot begin names in APL+Win):'
+              r,←⊂'        ]',cmd,' C:\apw\eigenval -out=C:\dyalog\eigenval -pre=_'
           :EndIf
       :EndSelect
     ∇
@@ -48,7 +48,7 @@
 
     ∇ r←optsDefs
       r←(
-          pre:'_'
+          pre:'_.'
           rep:origin,'/apw_replacements.txt'
           debug:0
           covers:origin,'/covers'

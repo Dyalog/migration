@@ -69,4 +69,4 @@ retry:
      cont ⎕NAPPEND tn
      ⎕NUNTIE tn
  :EndFor
- r←'Exported: ',(∊' variables, '  ' functions, and ' ' system functions',¨⍨⍕¨+/2 3 4∘.=⎕nc ⎕cm names),' → "',path,'"'
+ r←'Exported: ',(∊' variables, '  ' functions, and ' ' system vars',¨⍨⍕¨+/2 3 4∘.=⎕nc ⎕cm names),' → "',path,'"'

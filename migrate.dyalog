@@ -118,10 +118,11 @@
           content←⊃⎕NGET file 1
           reps+←+/×from ⎕S 3⊢content
           content←from ⎕R to⊢content
-          fx←#.⎕FX content
-          :If ⍬≡0/fx
-              Log'DEFN ERROR: Function ',(∧\⍤≠∘'-'⍛⌿2⊃⎕NPARTS file),'[',(⍕fx-1),'] from ',FmtPath file
-          :EndIf
+          :Trap 0
+              2 #.⎕FIX content ⍝ preserver source as typed                   ┌Re-fix to get lineno of issue
+          :Else                                                            ⍝ ↓ 
+              Log'DEFN ERROR: Function ',(∧\⍤≠∘'-'⍛⌿2⊃⎕NPARTS file),'[',(⍕¯1+⎕FX content),'] from ',FmtPath file
+          :EndTrap
       :EndFor
       Log'Imported: ',(⍕≢vars),' source functions from ',path FmtPath⍛,' → #'
       Log'Replaced: ',reps⍕⍛,' source phrases'

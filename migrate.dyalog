@@ -118,6 +118,7 @@
           content←⊃⎕NGET file 1
           reps+←+/×from ⎕S 3⊢content
           content←from ⎕R to⊢content
+          content←'⍝.*' '([\w∆⍙]+)(\s+[\w∆⍙]+\s+[\w∆⍙]+)'⎕R'&' '{\1}\2'@1⊢content ⍝ implicit ambivalence
           :Trap 0
               2 #.⎕FIX content ⍝ preserver source as typed                   ┌Re-fix to get lineno of issue
           :Else                                                            ⍝ ↓ 

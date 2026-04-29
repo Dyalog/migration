@@ -27,7 +27,7 @@ Requires Dyalog v20.0 or newer.
 1. Open the provided APWtoDyalog.txt file in a text editor, then select all and copy to clipboard.
 2. In APL+Win, enter `∇` to open an editor.
 3. Paste the function definition and press <kbd>Ctrl</kbd>+<kbd>e</kbd> to save.
-4. Run `APLWtoDyalog 'path\for\raw\source`.
+4. Run `APLWtoDyalog 'path\for\raw\source'`.
 
 ## Importing to Dyalog
 
